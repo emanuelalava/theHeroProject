@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">theHeroProject</string>
+    <string name="materia">Aplicaciones Moviles y Servicios Telematicos</string>
+    <string name="examen">Examen Practico</string>
+    <string name="integrantes">Winter Alava - Cesar Coloma</string>
+    <string name="busqueda">Busqueda por Nombre</string>
+    <string name="buscar">Buscar Heroes</string>
 </resources>
