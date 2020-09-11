@@ -32,16 +32,7 @@ public class Hero extends androidx.appcompat.widget.AppCompatButton {
         this.setText(name);
     }
 
-//    public Hero(String id, String name, String intelligence, String strength, String speed, String durability, String power, String combat) {
-//        this.id = id;
-//        this.intelligence = intelligence;
-//        this.strength = strength;
-//        this.speed = speed;
-//        this.durability = durability;
-//        this.power = power;
-//        this.combat = combat;
-//        this.name = name;
-//    }
+
 
     @Override
     public String toString() {

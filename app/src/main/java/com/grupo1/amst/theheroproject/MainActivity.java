@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
         nombre = busqueda.getText().toString();
         ListaRequest = Volley.newRequestQueue(this);
         Context contexto = this;
-//        this.buscarHeroe("batman");
-        Intent i = new Intent(this,ResultActivity.class);
-        startActivity(i);
+
+        this.buscarHeroe("bat");
+
     }
 
 
@@ -48,30 +48,35 @@ public class MainActivity extends AppCompatActivity {
                 (Request.Method.GET, url_superHero, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        System.out.println(response);
                         try {
                             JSONArray valores = response.getJSONArray("results");
 
                             for (int i = 0; i < response.length(); i++) {
+
                                 JSONObject object = valores.getJSONObject(i);
                                 String nombre = object.getString("name");
                                 String id = object.getString("id");
-
-
+                                String intelligence,strength,speed,durability, poder, combat;
 
                                 JSONObject power = object.getJSONObject("powerstats");
+                                String it=power.getString("intelligence");
+                                System.out.println(it);
+                                String stre =power.getString("strength");
+                                String spee =power.getString("speed");
+                                String dura =power.getString("durability");
+                                String poo=power.getString("power");
+                                String comb =power.getString("combat");
 
-                                String intelligence = power.getString("intelligence");
-                                String strength = power.getString("strength");
-                                String speed = power.getString("speed");
-                                String durability = power.getString("durability");
-                                String poder = power.getString("power");
-                                String combat = power.getString("combat");
-                                Hero h;
-                                h = new Hero(getApplicationContext(),id,nombre,intelligence,strength,speed,durability,poder,combat);
-                                System.out.println(h);
-                                Arrayheroes.add(h);
+                                try {
+                                    Hero heroe = new Hero(getApplicationContext(),id,nombre,it,stre,spee,dura,poo,comb);
+                                    Arrayheroes.add(heroe);
+                                }catch (Exception e){
+                                    System.out.println(e);
+                                }
+
+
                             }
+                            System.out.println(Arrayheroes);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
