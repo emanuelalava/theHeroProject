@@ -1,12 +1,13 @@
 package com.grupo1.amst.theheroproject;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.util.AttributeSet;
 import android.widget.Button;
 
 import java.io.Serializable;
 
-public class Hero extends androidx.appcompat.widget.AppCompatButton implements Serializable {
+public class Hero extends androidx.appcompat.widget.AppCompatButton implements Serializable{
     String id,intelligence, strength,speed, durability, power, combat;
     String name;
 
@@ -14,13 +15,13 @@ public class Hero extends androidx.appcompat.widget.AppCompatButton implements S
         super(context);
     }
 
-    public Hero(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }
-
-    public Hero(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-    }
+//    public Hero(Context context, AttributeSet attrs) {
+//        super(context, attrs);
+//    }
+//
+//    public Hero(Context context, AttributeSet attrs, int defStyle) {
+//        super(context, attrs, defStyle);
+//    }
     public Hero(Context context,String id, String name, String intelligence, String strength, String speed, String durability, String power, String combat) {
         super(context);
         this.id = id;
@@ -36,19 +37,7 @@ public class Hero extends androidx.appcompat.widget.AppCompatButton implements S
 
 
 
-    @Override
-    public String toString() {
-        return "Hero{" +
-                "id=" + id +
-                ", intelligence=" + intelligence +
-                ", strength=" + strength +
-                ", speed=" + speed +
-                ", durability=" + durability +
-                ", power=" + power +
-                ", combat=" + combat +
-                ", name='" + name + '\'' +
-                '}';
-    }
+
 
     public String getIdd() {
         return id;
@@ -112,5 +101,19 @@ public class Hero extends androidx.appcompat.widget.AppCompatButton implements S
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return "Hero{" +
+                "id='" + id + '\'' +
+                ", intelligence='" + intelligence + '\'' +
+                ", strength='" + strength + '\'' +
+                ", speed='" + speed + '\'' +
+                ", durability='" + durability + '\'' +
+                ", power='" + power + '\'' +
+                ", combat='" + combat + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

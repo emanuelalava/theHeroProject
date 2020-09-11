@@ -50,41 +50,37 @@ public class ResultActivity extends AppCompatActivity {
                             System.out.println(response);
                             JSONArray valores = response.getJSONArray("results");
 
-                            for (int i = 0; i < response.length(); i++) {
+                            for (int i = 0; i < valores.length(); i++) {
 
                                 JSONObject object = valores.getJSONObject(i);
                                 String nombre = object.getString("name");
                                 String id = object.getString("id");
                                 String it,stre,spee,dura,poo,comb;
                                 JSONObject power = object.getJSONObject("powerstats");
-                                if (!power.isNull("intelligence")){
-                                    it=power.getString("intelligence");
-                                }else{
-                                    it = "0";
+
+                                it=power.getString("intelligence");
+                                stre=power.getString("strength");
+                                spee=power.getString("speed");
+                                dura=power.getString("durability");
+                                poo=power.getString("power");
+                                comb=power.getString("combat");
+
+                                if (it.equals("null")){
+                                    it ="0";
                                 }
-                                if (!power.isNull("strength")){
-                                    stre=power.getString("strength");
-                                }else{
+                                if (stre.equals("null")){
                                     stre = "0";
                                 }
-                                if (!power.isNull("speed")){
-                                    spee=power.getString("speed");
-                                }else{
+                                if (spee.equals("null")){
                                     spee = "0";
                                 }
-                                if (!power.isNull("durability")){
-                                    dura=power.getString("durability");
-                                }else{
+                                if (dura.equals("null")){
                                     dura = "0";
                                 }
-                                if (!power.isNull("power")){
-                                    poo=power.getString("power");
-                                }else{
+                                if (poo.equals("null")){
                                     poo = "0";
                                 }
-                                if (!power.isNull("combat")){
-                                    comb=power.getString("combat");
-                                }else{
+                                if (comb.equals("null")){
                                     comb = "0";
                                 }
                                 Hero heroe = new Hero(getApplicationContext(),id,nombre,it,stre,spee,dura,poo,comb);
@@ -110,6 +106,7 @@ public class ResultActivity extends AppCompatActivity {
         for (Hero heroe:heroes){
             linearHeroes.addView(heroe);
             actualHero = heroe;
+            System.out.println(heroe);
             heroe.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
