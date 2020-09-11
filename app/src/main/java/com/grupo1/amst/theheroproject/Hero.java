@@ -4,7 +4,9 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.Button;
 
-public class Hero extends androidx.appcompat.widget.AppCompatButton {
+import java.io.Serializable;
+
+public class Hero extends androidx.appcompat.widget.AppCompatButton implements Serializable {
     String id,intelligence, strength,speed, durability, power, combat;
     String name;
 
