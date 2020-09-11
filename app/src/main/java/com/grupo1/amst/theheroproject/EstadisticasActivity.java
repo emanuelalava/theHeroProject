@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -42,7 +44,7 @@ public class EstadisticasActivity extends AppCompatActivity {
         NoOfEmp.add(new BarEntry(Integer.parseInt(hash.get("combate")), 5));
 
 
-        ArrayList year = new ArrayList();
+        ArrayList<String> year = new ArrayList<String>();
 
         year.add("Inteligencia");
         year.add("Fuerza");
@@ -55,8 +57,13 @@ public class EstadisticasActivity extends AppCompatActivity {
         BarDataSet bardataset = new BarDataSet(NoOfEmp, "HABILIDADES");
         chart.animateY(2000);
         BarData data = new BarData(year, bardataset);
+
+
+
         bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
         chart.setData(data);
+
+
 
     }
 

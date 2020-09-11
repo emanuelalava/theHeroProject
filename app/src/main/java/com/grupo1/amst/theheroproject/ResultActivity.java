@@ -103,23 +103,22 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     public void mostarHeroes(ArrayList<Hero> heroes){
-        for (Hero heroe:heroes){
+        for (final Hero heroe:heroes){
             linearHeroes.addView(heroe);
-            actualHero = heroe;
             System.out.println(heroe);
             heroe.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(getApplicationContext(),EstadisticasActivity.class);
                     HashMap<String,String> hash = new HashMap<>();
-                    hash.put("id", actualHero.getIdd());
-                    hash.put("name", actualHero.getName());
-                    hash.put("inteligencia", actualHero.getIntelligence());
-                    hash.put("speed",actualHero.getSpeed());
-                    hash.put("durabilidad",actualHero.getDurability());
-                    hash.put("poder",actualHero.getPower());
-                    hash.put("fuerza",actualHero.getStrength());
-                    hash.put("combate",actualHero.getCombat());
+                    hash.put("id", heroe.getIdd());
+                    hash.put("name", heroe.getName());
+                    hash.put("inteligencia", heroe.getIntelligence());
+                    hash.put("speed",heroe.getSpeed());
+                    hash.put("durabilidad",heroe.getDurability());
+                    hash.put("poder",heroe.getPower());
+                    hash.put("fuerza",heroe.getStrength());
+                    hash.put("combate",heroe.getCombat());
                     i.putExtra("info",hash);
                     startActivity(i);
 
