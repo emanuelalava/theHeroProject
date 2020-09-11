@@ -5,4 +5,7 @@
     <string name="integrantes">Winter Alava - Cesar Coloma</string>
     <string name="busqueda">Busqueda por Nombre</string>
     <string name="buscar">Buscar Heroes</string>
+    <string name="resultado">Resultado: </string>
+    <string name="habilidades">Habilidades: </string>
+
 </resources>

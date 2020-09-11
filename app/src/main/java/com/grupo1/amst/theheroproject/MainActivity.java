@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 
-public class MainActivity extends AppCompatActivity {
 
+public class MainActivity extends AppCompatActivity {
     EditText busqueda;
     String nombre;
     @Override
@@ -15,6 +15,5 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         busqueda = findViewById(R.id.txtBusqueda);
         nombre = busqueda.getText().toString();
-        // buscarHeroe(nombre)
     }
 }
