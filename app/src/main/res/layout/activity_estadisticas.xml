@@ -9,17 +9,22 @@
     android:padding="40dp">
 
     <TextView
+        android:id="@+id/nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="hero name"/>
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/habilidades"/>
 
-    <TextView
+    <com.github.mikephil.charting.charts.BarChart
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="person name"/>
+        android:layout_height="match_parent"
+        android:id="@+id/bar_chart">
+    </com.github.mikephil.charting.charts.BarChart>
+
+
 </LinearLayout>

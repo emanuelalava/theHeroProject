@@ -1,10 +1,26 @@
 package com.grupo1.amst.theheroproject;
 
-public class Hero {
+import android.content.Context;
+import android.util.AttributeSet;
+import android.widget.Button;
+
+public class Hero extends androidx.appcompat.widget.AppCompatButton {
     String id,intelligence, strength,speed, durability, power, combat;
     String name;
 
-    public Hero(String id, String name, String intelligence, String strength, String speed, String durability, String power, String combat) {
+    public Hero(Context context) {
+        super(context);
+    }
+
+    public Hero(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    public Hero(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+    }
+    public Hero(Context context,String id, String name, String intelligence, String strength, String speed, String durability, String power, String combat) {
+        super(context);
         this.id = id;
         this.intelligence = intelligence;
         this.strength = strength;
@@ -13,7 +29,19 @@ public class Hero {
         this.power = power;
         this.combat = combat;
         this.name = name;
+        this.setText(name);
     }
+
+//    public Hero(String id, String name, String intelligence, String strength, String speed, String durability, String power, String combat) {
+//        this.id = id;
+//        this.intelligence = intelligence;
+//        this.strength = strength;
+//        this.speed = speed;
+//        this.durability = durability;
+//        this.power = power;
+//        this.combat = combat;
+//        this.name = name;
+//    }
 
     @Override
     public String toString() {
@@ -29,7 +57,7 @@ public class Hero {
                 '}';
     }
 
-    public String getId() {
+    public String getIdd() {
         return id;
     }
 

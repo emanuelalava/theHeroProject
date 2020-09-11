@@ -3,6 +3,7 @@ package com.grupo1.amst.theheroproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import org.json.JSONArray;
@@ -35,8 +36,9 @@ public class MainActivity extends AppCompatActivity {
         nombre = busqueda.getText().toString();
         ListaRequest = Volley.newRequestQueue(this);
         Context contexto = this;
-        this.buscarHeroe("batman");
-
+//        this.buscarHeroe("batman");
+        Intent i = new Intent(this,ResultActivity.class);
+        startActivity(i);
     }
 
 
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                                 String poder = power.getString("power");
                                 String combat = power.getString("combat");
                                 Hero h;
-                                h = new Hero(id,nombre,intelligence,strength,speed,durability,poder,combat);
+                                h = new Hero(getApplicationContext(),id,nombre,intelligence,strength,speed,durability,poder,combat);
                                 System.out.println(h);
                                 Arrayheroes.add(h);
                             }
