@@ -15,6 +15,11 @@ public class Hero {
         this.name = name;
     }
 
+    public Hero(String id, String name){
+        this.name = name;
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Hero{" +
